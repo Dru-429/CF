@@ -18,7 +18,9 @@ int main() {
                 i++;
             }
             result += ch;
-            result += to_string(count);
+            if (count >1 ){
+                result += to_string(count);
+            }
         }
         cout << result << "\n";
     }
