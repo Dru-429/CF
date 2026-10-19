@@ -6,8 +6,8 @@ int main () {
   cin >> t;
 
   while(t--) {
-    int l,r;
-    int long sum = 0;
+    long long l,r;
+    long long sum = 0;
     cin >> l >> r;
     
     for (int i = l; i <= r; i++) {
@@ -16,5 +16,5 @@ int main () {
     cout << sum << endl;
   }
 
-  return 0;
+  return 0; 
 }
