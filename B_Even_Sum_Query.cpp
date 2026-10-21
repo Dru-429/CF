@@ -29,14 +29,7 @@ int main()
   {
     cin >> l >> r;
     long sum = 0;
-
-    for (int i = l - 1; i < r; i++)
-    {
-      if ((i + 1) % 2 == 0)
-      {
-        sum += arr[i];
-      }
-    }
+    sum = prefSum[r - 1] - (l > 1 ? prefSum[l - 2] : 0);
     cout << sum << endl;
   }
 }
