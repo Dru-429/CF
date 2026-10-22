@@ -5,7 +5,7 @@ int main()
 {
   int n, t, l, r;
   cin >> n;
-  long long arr[n], prefSum[n];
+  long long arr[n], prefSum[n] = {0};
 
   for (int i = 0; i < n; i++)
   {
@@ -28,7 +28,7 @@ int main()
   while (t--)
   {
     cin >> l >> r;
-    long sum = 0;
+    long long sum = 0;
     sum = prefSum[r - 1] - (l > 1 ? prefSum[l - 2] : 0);
     cout << sum << endl;
   }
