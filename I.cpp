@@ -3,7 +3,8 @@
 using namespace std;
 
 int main () {
-  int len, key;
+  int len;
+  long long key;
   string ans = "FALSE";
   set<int> s;
   cin >> len >> key;
@@ -12,7 +13,7 @@ int main () {
     int x;
     cin >> x;
 
-    int search = key - x;
+    long long search = key - x;
     if (s.find(search) != s.end()){
       ans = "TRUE";
     }
