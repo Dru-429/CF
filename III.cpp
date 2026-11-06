@@ -1,29 +1,25 @@
-#include <iostream> 
+#include <iostream>
 #include <map>
 using namespace std;
 
-int main () {
-  int len,ans = 0;
-  long long key;
+int main()
+{
+  int len;
+  long long key, ans = 0;
   cin >> len >> key;
-  map <int, int> m;
+  map<long long, long long> m;
 
-  for (int i = 0; i< len; i++) {
-    int x;
+  for (int i = 0; i < len; i++)
+  {
+    long long x;
     cin >> x;
 
-    long long search = key - x;
-    auto req = m.find(search);
-
-    if(req != m.end()) {
-      ans += req-> second;
+    auto req = m.find(key - x);
+    if (req != m.end())
+    {
+      ans += req->second;
     }
-    if(m.find(x) == m.end()) {
-      m[x] = 1;
-    }
-    else {
-      m[x]++;
-    }
+    m[x]++;
   }
   cout << ans << endl;
   return 0;
