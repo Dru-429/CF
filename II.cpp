@@ -1,25 +1,25 @@
 #include <iostream>
-#include <map>
+#include <map> 
 using namespace std;
 
 int main() {
   int len, key;
-  cin >> len >> key;
+  map<int, int> seen;
+  cin >> len >> key; 
 
-  map<int, int> seen;   // value -> 1-based index
-
-  for (int i = 1; i <= len; i++) {
-    int x;
+  for (int i = 0; i< len; i++){
+    int x; 
     cin >> x;
 
-    auto it = seen.find(key - x);
-    if (it != seen.end()) {
-      cout << it->second << " " << i << "\n";
+    int search = key -x;
+    auto index = seen.find(search);
+    if (index != seen.end()){
+      cout << index->second <<  " " << i + 1 << endl;
       return 0;
     }
-    seen[x] = i;
+    seen[x] = i + 1;
   }
 
-  cout << -1 << "\n";
+  cout << -1 << endl;
   return 0;
 }
