@@ -14,11 +14,11 @@ int main () {
     m[arr[i]] ++;
     
     while (m.size() > k ) {
-      l++;
       m[arr[l]]--;
       if( m[arr[l]] == 0) {
         m.erase(arr[l]);
       }
+      l++;
     }
     ans += i-l + 1;
   }
