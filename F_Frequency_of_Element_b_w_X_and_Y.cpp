@@ -44,7 +44,7 @@ int main()
       int mid = l + (r - l) / 2;
       if (arr[mid] <= y)
       {
-        rindex = mid; // candidate, keep looking right
+        rindex = mid; 
         l = mid + 1;
       }
       else
