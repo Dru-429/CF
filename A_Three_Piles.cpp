@@ -1,0 +1,25 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main () {
+  int t; 
+  cin >> t;
+
+  while (t--) {
+    int a,b,c;
+    cin >> a >> b >> c;
+
+    if (a == b && b == c ) {
+      cout << "NO" << endl;
+    }
+    else{
+      if (a + 1 == b && b+ 1 == c) {
+        cout << "YES" << endl;
+      }
+      else {
+        cout << "NO" << endl;
+      }
+    }
+  }
+}
