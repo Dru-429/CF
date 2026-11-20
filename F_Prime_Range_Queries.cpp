@@ -1,35 +1,36 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-int main()
-{
+int main () {
   ios_base::sync_with_stdio(false);
-  cin.tie(NULL);
+  cin.tie(NULL);  
 
   int limit, t;
   cin >> limit >> t;
-  int factors[limit+1]= {0};
+  
+  vector <int> prefix(limit + 1, 0);
+  vector <bool> isPrime(limit + 1, true);
 
-  for (int i = 1; i <= limit; i++)
-  {
-    for (int j = i; j <= limit; j+=i)
-    {
-      factors[j]++;
-    }
-  }  
+  isPrime[0] = isPrime[1] = false;
 
-  while (t--)
-  {
-    int l, r, count = 0;
+  for (int i = 2; (long long)i*i <=limit; i++) {
+    if (isPrime[i]) {
+      for (int j = i*i; j<=limit; j+=i) {
+        isPrime[j] = false;
+      }
+    } 
+  }
+
+  for (int i = 1; i<=limit; i++) {
+    prefix[i] = prefix[i-1] + isPrime[i];
+  }
+
+  while(t--) {
+    int l,r;
     cin >> l >> r;
 
-    for (int i = l; i <= r; i++)
-    {
-      if (factors[i] == 2)
-      {
-        count++;
-      }
-    }
-    cout << count << "\n";
+    cout << prefix[r] - prefix[l-1] << "\n";
   }
+  return 0;
 }
