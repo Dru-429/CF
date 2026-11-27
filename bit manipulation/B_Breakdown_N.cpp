@@ -4,6 +4,7 @@ using namespace std;
 #define int long long
 
 signed main () {
+  
   int n, curr = 1, ans =0;
   cin >> n;
 
